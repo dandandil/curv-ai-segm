@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "curv-ai-segm"
+version = "0.1.0"
+description = "Segmentation of a mesh into primitive-representable clusters"
+requires-python = ">=3.12"
+# Пусто намеренно, как и в соседних проектах: версии ставятся из
+# requirements.txt в конкретное окружение, чтобы установка пакета не
+# переехала на другие версии, чем те, на которых мерились результаты.
+dependencies = []
+
+[tool.setuptools]
+# Каталог называется `src` — слишком общее имя, чтобы импортировать его из
+# другого проекта. Отображаем на отдельное имя на случай, если понадобится.
+# Скрипты и ноутбуки пользуются `sys.path` от корня, как в step-dataset.
+package-dir = { curv_ai_segm = "src" }
+packages = ["curv_ai_segm"]

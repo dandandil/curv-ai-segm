@@ -1,0 +1,19 @@
+numpy
+scipy
+trimesh
+rtree           # trimesh.proximity: без неё closest_point падает на импорте
+embreex        # trimesh: ускоритель лучей, contains на сотнях тысяч точек за секунды, а не минуты
+open3d==0.19.0  # виртуальный сканер (dataset/scan.py): лучи RaycastingScene и слияние кадров TSDF
+manifold3d      # булевы операции над треугольными сетками: объём пересечения ячейки с мешем
+pymeshlab       # изотропный ремеш и упрощение
+pyrender        # оффскрин-рендер, нужен PYOPENGL_PLATFORM=egl
+matplotlib
+PyYAML
+jupyter         # notebooks/preview.ipynb
+cadquery-ocp==7.9.3.1.1        # OpenCASCADE: сборка B-Rep и STEP, версия как в step-dataset
+cadquery-ocp-proxy==7.9.3.1.1
+
+# Подгонка примитивов (fits) берётся из прототипа, не копируется:
+#   pip install -e ~/scan2cad/colouring_test
+# Струя Monge оттуда же скопирована в dataset/jet.py: там соседи ищутся kNN.
+mcp==2.3.0
